@@ -11,9 +11,18 @@ $mem = new Memed\Memed();
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <title>Memed</title>
 </head>
 <body>
+<a href="https://github.com/porcelanosa/memed" target="_blank" class="github-link"><i class="icon github"></i></a>
+<section class="section">
+    <div class="container">
+        <h1 class="is-size-3">Test implementation of memcached protocol</h1>
+    </div>
+</section>
 <section class="section">
     <div class="container">
         <? if ($_POST['setvalue'] == 'true' && $_POST['sv-value'] != '' && $_POST['sv-key'] != ''): ?>
@@ -90,6 +99,11 @@ $mem = new Memed\Memed();
                     <button class="delete"></button>
                     The value with <b><?= $_POST['del-key'] ?></b> is deleted. The value of the key that was deleted is
                     <b><?= $delvalue ?></b>
+                </div>
+            <?else:?>
+                <div class="notification is-warning">
+                    <button class="delete"></button>
+                    The value with <b><?= $_POST['del-key'] ?></b> not found
                 </div>
             <? endif; ?>
         <? endif; ?>

@@ -1,0 +1,18 @@
+body {
+    position: relative;
+}
+
+.github-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: .6;
+    transition: all .3s ease;
+}
+
+.github {
+    background: url(icon-github.png) no-repeat;
+    background-size: 36px 36px;
+    width: 36px;
+    height: 36px;
+}

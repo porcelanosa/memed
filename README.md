@@ -1,11 +1,13 @@
-#PHP implementation of Memcached protocol
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+# PHP implementation of Memcached protocol
 [memcached](http://www.memcached.org/) is a high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load.
 
 [Memcached protocol](https://github.com/memcached/memcached/blob/master/doc/protocol.txt)
 
 This implementation does not need [PHP memcached extension](http://php.net/manual/en/book.memcached.php) or any other
 
-##Usage
+## Usage
 Сreate class instance
 ```php 
 $mem = new Memed\Memed($server, $port);
@@ -13,7 +15,7 @@ $mem = new Memed\Memed($server, $port);
 **$server** - address of server, where _memcached_ runs (default **_127.0.0.1_**)
 
 **$port** - port that listens to _memcached_ (default **_11211_**)
-##Methods
+## Methods
 
 ### get($key)
 Returns value by key

@@ -1,0 +1,26 @@
+{
+  "name": "porcelanosa/memed",
+  "description": "PHP Memcached Implementation",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Alexander Shestakov",
+      "email": "sasha.shestakov@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Memed\\": "Memed"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Memed\\": "tests/MemedTest"
+    }
+  },
+  "bin": ["bin/memed"],
+  "require-dev": {
+    "phpunit/phpunit": "^8.0@dev"
+  }
+}

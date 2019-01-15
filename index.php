@@ -53,7 +53,7 @@ $mem = new Memed\Memed();
             <div class="column">
                 <div class="box">
                     <form action="" method="post">
-                        <h4>Set value</h4>
+                        <h4 class="is-size-5">Set value</h4>
                         <input type="hidden" name="setvalue" value="true">
                         <div class="field">
                             <div class="control">
@@ -74,7 +74,7 @@ $mem = new Memed\Memed();
             <div class="column">
                 <div class="box">
                     <form action="" method="post">
-                        <h4>Get value by key</h4>
+                        <h4 class="is-size-5">Get value by key</h4>
                         <input type="hidden" name="getvalue" value="true">
                         <div class="field has-addons">
                             <div class="control">
@@ -119,7 +119,7 @@ $mem = new Memed\Memed();
             <div class="column">
                 <div class="box">
                     <form action="" method="post">
-                        <h4>Delete value by key</h4>
+                        <h4 class="is-size-5">Delete value by key</h4>
                         <input type="hidden" name="delvalue" value="true">
                         <div class="field has-addons">
                             <div class="control">
@@ -135,7 +135,7 @@ $mem = new Memed\Memed();
             <div class="column">
                 <div class="box">
                     <form action="" method="post">
-                        <h4>Flush all keys</h4>
+                        <h4 class="is-size-5">Flush all keys</h4>
                         <input type="hidden" name="flushall" value="true">
                         <div class="field">
                             <div class="control">

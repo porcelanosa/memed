@@ -13,38 +13,45 @@ use PHPUnit\Framework\TestCase;
 
 class MemedTest extends TestCase
 {
+    private $mem;
+
+    protected function setUp()
+    {
+        $this->mem = new Memed();
+    }
+    protected function tearDown()
+    {
+        $this->mem = NULL;
+    }
     public function testSetGetValue()
     {
-        $key  = 'test';
+        $key   = 'test';
         $value = 'value';
 
-        $memed = new Memed();
-        $memed->set($key, $value);
+        $this->mem->set($key, $value);
 
-        $this->assertEquals($value, $memed->get($key));
+        $this->assertEquals($value, $this->mem->get($key));
     }
 
     public function testDeleteValue()
     {
-        $key  = 'testForDelete';
-        $value = 'value';
+        $key    = 'testForDelete';
+        $value  = 'value';
         $output = true;
 
-        $memed = new Memed();
-        $memed->set($key, $value);
+        $this->mem->set($key, $value);
 
-        $this->assertEquals($output, $memed->delete($key));
+        $this->assertEquals($output, $this->mem->delete($key));
     }
 
     public function testFlushAllValue()
     {
-        $key  = 'testForFlush';
-        $value = 'value';
+        $key    = 'testForFlush';
+        $value  = 'value';
         $output = true;
 
-        $memed = new Memed();
-        $memed->set($key, $value);
+        $this->mem->set($key, $value);
 
-        $this->assertEquals($output, $memed->delete($key));
+        $this->assertEquals($output, $this->mem->flushAll());
     }
 }

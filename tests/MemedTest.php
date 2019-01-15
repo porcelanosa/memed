@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Администратор
- * Date: 15.01.2019
- * Time: 16:21
+ * @var $mem \Memed\Memed
  */
 
 namespace tests\Memed;
@@ -13,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class MemedTest extends TestCase
 {
+
     private $mem;
 
     protected function setUp()
@@ -37,21 +35,19 @@ class MemedTest extends TestCase
     {
         $key    = 'testForDelete';
         $value  = 'value';
-        $output = true;
 
         $this->mem->set($key, $value);
 
-        $this->assertEquals($output, $this->mem->delete($key));
+        $this->assertTrue($this->mem->delete($key));
     }
 
     public function testFlushAllValue()
     {
         $key    = 'testForFlush';
         $value  = 'value';
-        $output = true;
 
         $this->mem->set($key, $value);
 
-        $this->assertEquals($output, $this->mem->flushAll());
+        $this->assertTrue($this->mem->flushAll(), 'Flushed all successfully');
     }
 }

@@ -54,3 +54,5 @@ Return slabs statistics, will display slabs statistics (size, memory usage, comm
 ```php
 $mem->getSlabsStats()
 ```
+## Demo
+[Demo site](https://mem.sa6.ru/)

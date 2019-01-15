@@ -24,14 +24,10 @@ class Memed
      * @param null $server string
      * @param null $port
      */
-    public function __construct($server = null, $port = null)
+    public function __construct($server = '127.0.0.1', $port = '11211')
     {
-        if ($server) {
-            $this->server = $server;
-        }
-        if ($port) {
-            $this->port = $port;
-        }
+        $this->server = $server;
+        $this->port   = $port;
     }
 
     /**
@@ -57,14 +53,12 @@ class Memed
      *
      * @return bool
      */
-    public function set($key, $value, $flags = 0, $exptime = 3600)
+    public function set($key, $value, $flags = 0, $exptime = 0)
     {
         $size    = strlen($value);
         $cmd_str = "set " . $key . " " . $flags . " " . $exptime . " " . $size . self::BR . $value . self::BR;
 
         $response = $this->sendCommand($cmd_str);
-        var_dump($response);
-        var_dump(self::STORED);
         if ($response == self::STORED) {
             return true;
         } else {
@@ -83,7 +77,6 @@ class Memed
     {
         $cmd_str  = "delete " . $key . self::BR;
         $response = $this->sendCommand($cmd_str);
-
         if ($response == self::DELETED) {
             return true;
         } elseif ($response == self::NOT_FOUND) {
@@ -93,6 +86,36 @@ class Memed
         }
     }
 
+    /**
+     * Invalidate all items in the cache
+     *
+     * @param $delay integer
+     *
+     * @return bool
+     */
+    public function flushAll($delay = 0)
+    {
+        $cmd_str  = "flush_all " . $delay . self::BR;
+        $response = $this->sendCommand($cmd_str);
+
+        if ($response == self::OK) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Basic stats- Returns general-purpose statistics like uptime, version, memory occupation, …
+     * @return array
+     */
+    public function getStats()
+    {
+        $cmd_str  = "stats" . self::BR;
+        $response = $this->sendCommand($cmd_str);
+
+        return $response;
+    }
     /**
      * Return items statistics, will display items statistics (count, age, eviction, …) organized by slabs ID
      * @return array

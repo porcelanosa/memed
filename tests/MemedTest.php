@@ -35,4 +35,16 @@ class MemedTest extends TestCase
 
         $this->assertEquals($output, $memed->delete($key));
     }
+
+    public function testFlushAllValue()
+    {
+        $key  = 'testForFlush';
+        $value = 'value';
+        $output = true;
+
+        $memed = new Memed();
+        $memed->set($key, $value);
+
+        $this->assertEquals($output, $memed->delete($key));
+    }
 }

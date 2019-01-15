@@ -19,7 +19,12 @@
       "tests\\MemedTests\\": "tests"
     }
   },
-  "bin": ["bin/memed"],
+  "bin": [
+    "bin/memed"
+  ],
+  "require": {
+    "php": ">=7.1.0"
+  },
   "require-dev": {
     "phpunit/phpunit": "^8.0@dev"
   }

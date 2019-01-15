@@ -3,9 +3,12 @@
  * Memed class
  */
 
-namespace Porcelanosa\Memed;
+namespace Memed;
 
 
 class Memed {
 
+	public function get($value){
+		return true;
+	}
 }

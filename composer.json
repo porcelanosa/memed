@@ -11,12 +11,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Memed\\": "Memed"
+      "Memed\\": ""
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Memed\\": "tests/MemedTest"
+      "tests\\MemedTests\\": "tests"
     }
   },
   "bin": ["bin/memed"],

@@ -1,5 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/porcelanosa/memed/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/porcelanosa/memed/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/porcelanosa/memed/badges/build.png?b=master)](https://scrutinizer-ci.com/g/porcelanosa/memed/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/porcelanosa/memed/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 # PHP implementation of Memcached protocol
 [memcached](http://www.memcached.org/) is a high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load.
 
